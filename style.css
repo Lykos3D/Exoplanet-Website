@@ -45,7 +45,6 @@ a:visited {
     height: 175px;
     width: 175px;
     margin-bottom: 40px;
-    object-fit: contain;
 }
 
 #nav-bar-container h1 {
@@ -71,14 +70,14 @@ a:visited {
 #main-container {
     margin-left: 300px;
     display: grid;
-    grid-template-rows: 2.5fr 1.5fr 1fr 1fr;
-    height: 2000px;
+    grid-template-rows: 1fr 2.5fr 1.5fr 1fr 1fr;
+    height: 2500px;
     width: 75%;
 }
 
 #main-container h1 {
     margin-top: 50px;
-    margin-left: 50px;
+    text-align: center;
 }
 
 #just-map-container,
