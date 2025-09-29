@@ -4,6 +4,18 @@ html {
 }
 
 body {
+    margin: 0;
+    padding: 0;
+}
+
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+#nav-and-main-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -14,18 +26,12 @@ body {
     color: white;
 }
 
-a,
-a:visited {
-    color: inherit;
-    text-decoration: none;
-}
-
 #nav-bar {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-height: 100vh;
+    height: 100vh;
     min-width: 350px;
     min-height: 800px;
     position: sticky;
