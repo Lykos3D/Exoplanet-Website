@@ -85,6 +85,7 @@ a:visited {
 #main-container {
     display: grid;
     grid-template-rows: auto;
+    row-gap: 100px;
     width: 100%;
     padding-left: 50px;
     padding-right: 50px;
