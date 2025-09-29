@@ -62,7 +62,7 @@ a:visited {
 }
 
 #nav-bar-container > a:hover {
-    background-color: #3f3f3f;
+    background-color: #b93dfb;
     border: 1px solid #8b8b8b;
     transform: scale(1.05);
     transition: background-color 0.5s, border 0.5s, transform 0.5s;
