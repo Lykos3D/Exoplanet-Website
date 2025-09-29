@@ -74,7 +74,10 @@ a:visited {
     border-radius: 50px;
 }
 
-#nav-bar-container > a:hover {
+#nav-bar-container > a:hover,
+.statistic-panel:hover,
+.form-panel:hover,
+#form-submit-button:hover  {
     background-color: #b93dfb;
     border: 1px solid #8b8b8b;
     transform: scale(1.05);
@@ -92,18 +95,19 @@ a:visited {
 }
 
 #main-container h1 {
-
     text-align: center;
 }
 
 #just-map-container,
 .panels-container {
     display: grid;
-    justify-items: center;
-    flex-direction: row;
+    align-items: center;
     justify-items: center;
     align-items: center;
     width: 100%;
+    border-radius: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }   
 
 #planet-map-container,
@@ -121,11 +125,16 @@ a:visited {
 .statistic-panel,
 .form-panel {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
     background-color: #282828;
     border: 1px solid #575757;
+}
+
+.form-panel {
+    align-items: flex-start;
 }
 
 #planet-map {
@@ -139,14 +148,19 @@ a:visited {
     height: 300px;
 }
 
+#form-submit-button {
+    width: 75px;
+    height: 40px;
+    color: inherit;
+    border: 1px solid #575757;
+    background-color: #282828;
+    border-radius: 50px;
+}
+
 #planet-form {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    border: 1px solid #575757;
-    border-radius: 50px;
-    background-color: #282828;
-    padding: 50px;
 }
 
 /*
