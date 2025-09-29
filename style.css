@@ -21,6 +21,8 @@ a:visited {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     background-color: #121212;
@@ -32,11 +34,11 @@ a:visited {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     min-width: 350px;
-    min-height: 800px;
     position: sticky;
     top: 0;
+    border: 1px solid white;
 }
 
 #nav-bar-container {
@@ -45,7 +47,7 @@ a:visited {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    height: 95%;
+    min-height: 95vh;
     width: 80%;
     border: 1px solid #575757;
     border-radius: 50px;
@@ -89,7 +91,7 @@ a:visited {
 }
 
 #main-container h1 {
-    margin-top: 50px;
+
     text-align: center;
 }
 
