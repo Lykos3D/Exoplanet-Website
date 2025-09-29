@@ -5,6 +5,18 @@ html {
 body {
     margin: 0;
     padding: 0;
+    background-color: #121212;
+    color: white;
+}
+
+* {
+    font-family: 'Inter', sans-serif, 'Times New Roman', Times, serif;
+}
+
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
 }
 
 #nav-bar {
@@ -26,8 +38,17 @@ body {
     gap: 20px;
     height: 95%;
     width: 80%;
-    border: 1px solid black;
+    border: 1px solid #575757;
     border-radius: 50px;
+    background-color: #282828;
+    overflow: auto;
+}
+
+#planet_icon {
+    height: 175px;
+    width: 175px;
+    margin-bottom: 40px;
+    object-fit: contain;
 }
 
 #nav-bar-container h1 {
@@ -36,19 +57,24 @@ body {
 
 #nav-bar-container > a {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 50%;
-    height: 7.5%;
-    border: 1px solid black;
+    width: 55%;
+    height: 50px;
     border-radius: 50px;
-    text-decoration: none;
+}
+
+#nav-bar-container > a:hover {
+    background-color: #3f3f3f;
+    border: 1px solid #8b8b8b;
+    transform: scale(1.05);
+    transition: background-color 0.5s, border 0.5s, transform 0.5s;
 }
 
 #main-container {
     margin-left: 300px;
     display: grid;
-    grid-template-rows: 3fr 1.5fr 1fr 1fr;
+    grid-template-rows: 2.5fr 1.5fr 1fr 1fr;
     height: 2000px;
     width: 75%;
 }
@@ -83,6 +109,8 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50px;
+    background-color: #282828;
+    border: 1px solid #575757;
 }
 
 #planet-map {
@@ -95,11 +123,22 @@ body {
     height: 300px;
 }
 
-* {
-    font-family: 'Inter', sans-serif, 'Times New Roman', Times, serif;
-    overflow: auto;
-}
+/*
+Color palette, generated from https://colorffy.com/
 
-h1 {
-    margin: 0;
-}
+Surface Colors
+#121212 -> Dark Black
+#282828 -> Very Dark Grey
+#3f3f3f -> Dark Grey
+#575757 -> Grey
+#717171 -> Light Grey
+#8b8b8b -> Very Light Grey
+
+Primary Colors
+#ac05fa -> Vivid Purple
+#b93dfb -> Bright Purple
+#c45bdf -> Light Purple
+#cfbfdf -> Very Light Purple
+#d98dff -> Pale Purple
+#e2a4ff -> Very Pale Purple
+*/
