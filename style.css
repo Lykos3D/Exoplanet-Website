@@ -79,7 +79,7 @@ a:visited {
 .form-panel:hover,
 #form-submit-button:hover  {
     background-color: #b93dfb;
-    border: 1px solid #8b8b8b;
+    border: 1px solid #b93dfb;
     transform: scale(1.05);
     transition: background-color 0.5s, border 0.5s, transform 0.5s;
 }
