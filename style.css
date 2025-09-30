@@ -162,6 +162,10 @@ a:visited {
     align-items: center;
 }
 
+form > input {
+    font-family: inherit;
+}
+
 /*
 Color palette, generated from https://colorffy.com/
 
