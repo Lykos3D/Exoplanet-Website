@@ -47,7 +47,8 @@ a:visited {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    min-height: 95%;
+    height: 95%;
+    min-height: 600px;
     width: 80%;
     border: 1px solid #575757;
     border-radius: 50px;
