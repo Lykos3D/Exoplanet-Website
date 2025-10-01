@@ -92,6 +92,7 @@ form > input {
     align-items: center;
     gap: 100px;
     width: 100%;
+    min-width: 1000px;
     max-width: 1500px;
     padding-top: 50px;
     padding-bottom: 50px;
