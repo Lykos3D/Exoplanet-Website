@@ -8,6 +8,7 @@ body {
     padding: 0;
     background-color: #121212;
     height: auto;
+    min-width: min-content;
 }
 
 a,
@@ -56,10 +57,6 @@ form > input {
     border-radius: 50px;
     background-color: #282828;
     overflow: auto;
-}
-
-* {
-    border: 1px solid red;
 }
 
 #planet_icon {
@@ -120,7 +117,8 @@ form > input {
     align-items: center;
     justify-items: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
+    min-width: min-content;
     border-radius: 50px;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -190,7 +188,7 @@ form > input {
     width: 100%;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
     #nav-and-main-container {
         flex-direction: column;
         justify-content: center;
@@ -204,7 +202,7 @@ form > input {
     
     #nav-bar-container {
         height: 1000px;
-        width: 95%;
+        width: 80%;
     }
 
     #nav-bar-container > a {
@@ -212,7 +210,6 @@ form > input {
     }
 
     #main-container {
-        border: 1px solid blue;
         min-width: 100%;
         max-width: auto;
     }
