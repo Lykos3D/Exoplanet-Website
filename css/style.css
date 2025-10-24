@@ -84,7 +84,7 @@ nav {
 
     background-color: var(--clr-surface-tonal-a10);
 
-    border: 5px solid var(--clr-surface-tonal-a20);
+    border: 4px solid var(--clr-surface-tonal-a20);
     border-radius: var(--default-border-radius);
 
     z-index: var(--nav-z-index);
@@ -95,12 +95,12 @@ nav > .logo {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: 30px; 
+    gap: 30px;
 }
 
 #nav-img {
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 75px;
 }
 
 nav a {
@@ -164,7 +164,7 @@ section#about {
 
     background-color: var(--clr-surface-tonal-a10);
 
-    border: 5px solid var(--clr-surface-tonal-a20);
+    border: 4px solid var(--clr-surface-tonal-a20);
     border-radius: var(--default-border-radius);
 
     margin-left: var(--page-horizontal-margin);
@@ -194,7 +194,7 @@ section#features {
     height: var(--card-height);
     background-color: var(--clr-surface-tonal-a10);
     border-radius: var(--default-border-radius);
-    border: 5px solid var(--clr-surface-tonal-a20);
+    border: 4px solid var(--clr-surface-tonal-a20);
     transition: var(--card-transition-duration) ease-in-out;
 }
 
