@@ -1,5 +1,16 @@
 @import "color-style.css";
 
+/* This is needed for fade in animation to play upon loading page */
+@keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 100;
+        }
+}
+
+
 :root {
     /* Generic Variables */
     --default-border-radius: 50px;
@@ -43,6 +54,7 @@ body {
     min-width: min-content;
 
     background-color: var(--clr-surface-tonal-a0);
+    animation: fadeIn 1s ease-in both;
 }
 
 h1 {
