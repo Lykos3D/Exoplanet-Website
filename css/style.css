@@ -14,28 +14,29 @@
 :root {
     /* Generic Variables */
     --default-border-radius: 50px;
+    --heading-margin-bottom: 75px;
+    --page-horizontal-margin: 75px;
 
     /* Navigation bar variables */
-    --nav-margin: 20px;
+    --nav-vertical-margin: 20px;
     --nav-min-gap: 20px;
     --nav-max-gap: 100px;
     --nav-preferred-gap: 5vw;
-    --nav-vertical-padding: 40px;
-    --nav-horizontal-padding: 40px;
+    --nav-vertical-padding: 30px;
+    --nav-horizontal-padding: 30px;
 
     --nav-link-vertical-padding: 15px;
     --nav-link-horizontal-padding: 25px;
 
-    /* Generic Section variables */
-    --section-horizontal-padding: 50px;
-    --section-vertical-padding: 50px;
-
     /* About Section variables */
-    --about-height: 1000px;
+    --about-height: 650px;
+    --image-margin: 30px;
 
     /* Card Section variables */
     --card-width: 300px;
     --card-height: 350px;
+    --card-transform-scale: 1.03;
+    --card-transition-duration: 0.5s;
 }
 
 
@@ -43,7 +44,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    color: var(--clr-light-a0)
+    color: var(--clr-light-a0);
 }
 
 /* Body Styling */
@@ -57,27 +58,38 @@ body {
     animation: fadeIn 1s ease-in both;
 }
 
-h1 {
-    margin-bottom: 30px;
-}
-
 /* Navigation Bar Styling */
 nav {
-    margin: var(--nav-margin);
+    margin-top: var(--nav-vertical-margin);
+    margin-left: var(--page-horizontal-margin);
+    margin-right: var(--page-horizontal-margin);
     position: sticky;
-    top:  var(--nav-margin);
+    top:  var(--nav-vertical-margin);
 
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: clamp(var(--nav-min-gap), var(--nav-preferred-gap), var(--nav-max-gap));
 
-    padding: var(--nav-vertical-padding) var(--nav-horizontal-padding) var(--nav-vertical-padding) var(--nav-horizontal-padding); 
+    padding: var(--nav-vertical-padding) var(--nav-horizontal-padding);
 
     background-color: var(--clr-surface-tonal-a10);
 
-    border: 2px solid var(--clr-surface-tonal-a20);
+    border: 5px solid var(--clr-surface-tonal-a20);
     border-radius: var(--default-border-radius);
+}
+
+nav > .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px; 
+}
+
+#nav-img {
+    height: 100px;
+    width: 100px;
 }
 
 nav a {
@@ -85,23 +97,52 @@ nav a {
     padding: var(--nav-link-vertical-padding) var(--nav-link-horizontal-padding);
     border-radius: var(--default-border-radius);
     border: 1px solid transparent;
+    transition: 0.3s ease-in-out;
 }
 
 nav a:hover {
     background-color: var(--clr-primary-a0);
-    transition: 0.5s ease;
+    transition: 0.5s ease-in-out;
     border: 1px solid var(--clr-surface-tonal-a10)
 }
 
 /* Generic Section Styling */
 section {
     background-color: var(--clr-surface-tonal-a0);
-    padding: var(--section-vertical-padding) var(--section-horizontal-padding);
+    margin: var(--heading-margin-bottom) var(--page-horizontal-margin);
+}
+
+section > h1 {
+    text-align: center;
+    margin-bottom: var(--heading-margin-bottom);
 }
 
 /* About Section Styling */
 section#about {
-    height: var(--about-height);
+    min-height: var(--about-height);
+}
+
+#about p {
+    font-size: 35px;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 500px;
+    width: 500px;
+
+    background-color: var(--clr-surface-tonal-a10);
+
+    border: 5px solid var(--clr-surface-tonal-a20);
+    border-radius: var(--default-border-radius);
+
+    margin-left: var(--page-horizontal-margin);
+    margin-bottom: var(--page-horizontal-margin);
+
+    float: right;
 }
 
 /* Features Section Styling */
@@ -125,13 +166,14 @@ section#features {
     height: var(--card-height);
     background-color: var(--clr-surface-tonal-a10);
     border-radius: var(--default-border-radius);
-    border: 2px solid var(--clr-surface-tonal-a30);
+    border: 5px solid var(--clr-surface-tonal-a20);
+    transition: var(--card-transition-duration) ease-in-out;
 }
 
 .card:hover {
     background-color: var(--clr-surface-tonal-a20);
-    transform: scale(1.05);
-    transition: 0.5s ease;
+    transform: scale(var(--card-transform-scale));
+    transition: var(--card-transition-duration) ease-in-out;
 }
 
 /* Footer Section Styling */
