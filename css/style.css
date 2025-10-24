@@ -1,0 +1,131 @@
+@import "color-style.css";
+
+:root {
+    /* Generic Variables */
+    --default-border-radius: 50px;
+
+    /* Navigation bar variables */
+    --nav-margin: 20px;
+    --nav-min-gap: 20px;
+    --nav-max-gap: 100px;
+    --nav-preferred-gap: 5vw;
+    --nav-vertical-padding: 40px;
+    --nav-horizontal-padding: 40px;
+
+    --nav-link-vertical-padding: 15px;
+    --nav-link-horizontal-padding: 25px;
+
+    /* Generic Section variables */
+    --section-horizontal-padding: 50px;
+    --section-vertical-padding: 50px;
+
+    /* About Section variables */
+    --about-height: 1000px;
+
+    /* Card Section variables */
+    --card-width: 300px;
+    --card-height: 350px;
+}
+
+
+/* Universal Styles */ 
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--clr-light-a0)
+}
+
+/* Body Styling */
+body {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    min-width: min-content;
+
+    background-color: var(--clr-surface-tonal-a0);
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+/* Navigation Bar Styling */
+nav {
+    margin: var(--nav-margin);
+    position: sticky;
+    top:  var(--nav-margin);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: clamp(var(--nav-min-gap), var(--nav-preferred-gap), var(--nav-max-gap));
+
+    padding: var(--nav-vertical-padding) var(--nav-horizontal-padding) var(--nav-vertical-padding) var(--nav-horizontal-padding); 
+
+    background-color: var(--clr-surface-tonal-a10);
+
+    border: 2px solid var(--clr-surface-tonal-a20);
+    border-radius: var(--default-border-radius);
+}
+
+nav a {
+    text-decoration: none;
+    padding: var(--nav-link-vertical-padding) var(--nav-link-horizontal-padding);
+    border-radius: var(--default-border-radius);
+    border: 1px solid transparent;
+}
+
+nav a:hover {
+    background-color: var(--clr-primary-a0);
+    transition: 0.5s ease;
+    border: 1px solid var(--clr-surface-tonal-a10)
+}
+
+/* Generic Section Styling */
+section {
+    background-color: var(--clr-surface-tonal-a0);
+    padding: var(--section-vertical-padding) var(--section-horizontal-padding);
+}
+
+/* About Section Styling */
+section#about {
+    height: var(--about-height);
+}
+
+/* Features Section Styling */
+section#features {
+    height: var(--features-height)
+}
+
+/* Card Styling */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: var(--card-width);
+    height: var(--card-height);
+    background-color: var(--clr-surface-tonal-a10);
+    border-radius: var(--default-border-radius);
+    border: 2px solid var(--clr-surface-tonal-a30);
+}
+
+.card:hover {
+    background-color: var(--clr-surface-tonal-a20);
+    transform: scale(1.05);
+    transition: 0.5s ease;
+}
+
+/* Footer Section Styling */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-surface-tonal-a20);
+}
