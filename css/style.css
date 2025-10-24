@@ -28,6 +28,8 @@
     --nav-link-vertical-padding: 15px;
     --nav-link-horizontal-padding: 25px;
 
+    --nav-z-index: 1000;
+
     /* About Section variables */
     --about-height: 650px;
     --image-margin: 30px;
@@ -77,6 +79,8 @@ nav {
 
     border: 5px solid var(--clr-surface-tonal-a20);
     border-radius: var(--default-border-radius);
+
+    z-index: var(--nav-z-index);
 }
 
 nav > .logo {
@@ -103,7 +107,19 @@ nav a {
 nav a:hover {
     background-color: var(--clr-primary-a0);
     transition: 0.5s ease-in-out;
-    border: 1px solid var(--clr-surface-tonal-a10)
+    border: 1px solid var(--clr-surface-tonal-a10);
+}
+
+/* Highlights the page the user is currently on in the nav bar */
+.current-page-link {
+    color: var(--clr-primary-a0);
+    background-color:  var(--clr-surface-tonal-a20);
+}
+
+.current-page-link:hover {
+    color: var(--clr-primary-a0);
+    background-color:  var(--clr-surface-tonal-a20);
+    border: 1px solid var(--clr-surface-tonal-a20);
 }
 
 /* Generic Section Styling */
