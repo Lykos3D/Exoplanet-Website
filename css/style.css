@@ -14,6 +14,9 @@
 :root {
     /* Generic Variables */
     --default-border-radius: 50px;
+    --default-transition-duration: 0.5s;
+    --default-transform-increase: 1.03;
+    --default-transform-decrease: 0.93;
     --heading-margin-bottom: 75px;
     --page-horizontal-margin: 75px;
 
@@ -37,8 +40,6 @@
     /* Card Section variables */
     --card-width: 300px;
     --card-height: 350px;
-    --card-transform-scale: 1.03;
-    --card-transition-duration: 0.5s;
 }
 
 
@@ -58,6 +59,12 @@ body {
 
     background-color: var(--clr-surface-tonal-a0);
     animation: fadeIn 1s ease-in both;
+}
+
+/* Button Styling */
+.button:active {
+    transform: scale(0.97);
+    transition: var(--card-transition-duration);
 }
 
 /* Navigation Bar Styling */
@@ -108,6 +115,11 @@ nav a:hover {
     background-color: var(--clr-primary-a0);
     transition: 0.5s ease-in-out;
     border: 1px solid var(--clr-surface-tonal-a10);
+}
+
+nav a:active {
+    transform: scale(var(--default-transform-decrease));
+    transition: var(--default-transition-duration);
 }
 
 /* Highlights the page the user is currently on in the nav bar */
@@ -188,8 +200,8 @@ section#features {
 
 .card:hover {
     background-color: var(--clr-surface-tonal-a20);
-    transform: scale(var(--card-transform-scale));
-    transition: var(--card-transition-duration) ease-in-out;
+    transform: scale(var(--default-transform-increase));
+    transition: var(--default-transition-duration) ease-in-out;
 }
 
 /* Footer Section Styling */
