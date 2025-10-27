@@ -39,7 +39,7 @@
             <div class="card">
                 <h1 class="card-header">Minimum Distance from Earth</h1>
                 <label for="min-distance-from-earth"><span id="min_distance"></span><span>&nbsp;Parsecs</span></label>
-                <input type="range" id="min-distance-from-earth" min="0" max="10000" value="0">
+                <input type="range" id="min-distance-from-earth" name="min_dist" min="0" max="10000" value="0">
             
                 <!-- Display slider value -->
                 <script>
@@ -56,7 +56,7 @@
                 <!-- Maximum Distance -->
                     <h1 class="card-header">Maximum Distance from Earth</h1>
                     <label for="max-distance-from-earth"><span id="max_distance"></span><span>&nbsp;Parsecs</span></label>
-                    <input type="range" id="max-distance-from-earth" min="0" max="10000" value="10000">
+                    <input type="range" id="max-distance-from-earth" name="max_dist" min="0" max="10000" value="10000">
 
                     <!-- Display slider value -->
                     <script>
@@ -77,7 +77,7 @@
             <div class="card">
                 <h1 class="card-header">Earliest Discovery Year</h1>
                 <label for="min-discovery-year"><span>Year:&nbsp;</span><span id="min_year"></span></label>
-                <input type="range" id="min-discovery-year" min="1992" max="2025" value="1992">
+                <input type="range" id="min-discovery-year" name="min_year" min="1992" max="2025" value="1992">
             
                 <!-- Display slider value -->
                 <script>
@@ -94,7 +94,7 @@
                 <!-- Maximum Year -->
                 <h1 class="card-header">Latest Discovery Year</h1>
                 <label for="max-discovery-year"><span>Year:&nbsp;</span><span id="max_year"></span></label>
-                <input type="range" id="max-discovery-year" min="1992" max="2025" value="2025">
+                <input type="range" id="max-discovery-year" name="max_year" min="1992" max="2025" value="2025">
 
                 <!-- Display slider value -->
                 <script>
@@ -113,7 +113,7 @@
             <div class="card">
                 <h1 class="card-header">Minimum Mass</h1>
                 <label for="min-mass"><span id="min_mass"></span><span>&nbsp;Earth Masses</span></label>
-                <input type="range" id="min-mass" min="0" max="26000" value="0">
+                <input type="range" id="min-mass" name="min_mass" min="0" max="26000" value="0">
         
                 <!-- Display slider value -->
                 <script>
@@ -130,7 +130,7 @@
                 <!-- Maximum Mass -->
                 <h1 class="card-header">Maximum Mass</h1>
                 <label for="max-mass"><span id="max_mass"></span><span>&nbsp;Earth Masses</span></label>
-                <input type="range" id="max-mass" min="0" max="26000" value="26000">
+                <input type="range" id="max-mass" name="max_mass" min="0" max="26000" value="26000">
 
                 <!-- Display slider value -->
                 <script>
@@ -150,27 +150,27 @@
                 <h1 class="card-header">Discovery Method</h1>
                 <div class="checkbox-container">
                     <div>
-                        <input type="checkbox" id="radial-velocity" name = "discovery_method[]" value="Radial Velocity">
+                        <input type="checkbox" id="radial-velocity" name="discovery_method[]" value="Radial Velocity">
                         <label for="radial-velocity">&nbsp;Radial Velocity</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="imaging" name = "discovery_method[]" value="Imaging">
+                        <input type="checkbox" id="imaging" name="discovery_method[]" value="Imaging">
                         <label for="imaging">&nbsp;Imaging</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="eclipse-timing-variations" name = "discovery_method[]" value="Eclipse Timing Variations">
+                        <input type="checkbox" id="eclipse-timing-variations" name="discovery_method[]" value="Eclipse Timing Variations">
                         <label for="eclipse-timing-variations">&nbsp;Eclipse Timing Variations</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="transit" name = "discovery_method[]" value="Transit">
+                        <input type="checkbox" id="transit" name="discovery_method[]" value="Transit">
                         <label for="transit">&nbsp;Transit</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="microlensing" name = "discovery_method[]" value="Microlensing">
+                        <input type="checkbox" id="microlensing" name="discovery_method[]" value="Microlensing">
                         <label for="microlensing">&nbsp;Microlensing</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="astrometry" name = "discovery_method[]" value="Astrometry">
+                        <input type="checkbox" id="astrometry" name="discovery_method[]" value="Astrometry">
                         <label for="astrometry">&nbsp;Astrometry</label>
                     </div>
                 </div>
