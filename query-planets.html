@@ -41,7 +41,7 @@
                 <label for="min-distance-from-earth"><span id="min_distance"></span><span>&nbsp;Parsecs</span></label>
                 <input type="range" id="min-distance-from-earth" min="0" max="10000" value="0">
             
-                <!-- Script made with help from ChatGPT -->
+                <!-- Display slider value -->
                 <script>
                     let min_dist_slider = document.getElementById("min-distance-from-earth");
                     let min_dist_output = document.getElementById("min_distance");
@@ -57,18 +57,18 @@
                     <h1 class="card-header">Maximum Distance from Earth</h1>
                     <label for="max-distance-from-earth"><span id="max_distance"></span><span>&nbsp;Parsecs</span></label>
                     <input type="range" id="max-distance-from-earth" min="0" max="10000" value="10000">
-            
-                <!-- Script made with help from ChatGPT -->
-                <script>
-                    let max_dist_slider = document.getElementById("max-distance-from-earth");
-                    let max_dist_output = document.getElementById("max_distance");
 
-                    max_distance.textContent = max_dist_slider.value;
+                    <!-- Display slider value -->
+                    <script>
+                        let max_dist_slider = document.getElementById("max-distance-from-earth");
+                        let max_dist_output = document.getElementById("max_distance");
 
-                    max_dist_slider.addEventListener('input', function() {
-                        max_dist_output.textContent = this.value;
-                    });
-                </script>
+                        max_distance.textContent = max_dist_slider.value;
+
+                        max_dist_slider.addEventListener('input', function() {
+                            max_dist_output.textContent = this.value;
+                        });
+                    </script>
             </div>
 
             <!-- Year of Discovery -->
@@ -79,7 +79,7 @@
                 <label for="min-discovery-year"><span>Year:&nbsp;</span><span id="min_year"></span></label>
                 <input type="range" id="min-discovery-year" min="1992" max="2025" value="1992">
             
-                <!-- Script made with help from ChatGPT -->
+                <!-- Display slider value -->
                 <script>
                     let min_year_slider = document.getElementById("min-discovery-year");
                     let min_year_output = document.getElementById("min_year");
@@ -95,7 +95,8 @@
                 <h1 class="card-header">Latest Discovery Year</h1>
                 <label for="max-discovery-year"><span>Year:&nbsp;</span><span id="max_year"></span></label>
                 <input type="range" id="max-discovery-year" min="1992" max="2025" value="2025">
-                <!-- Script made with help from ChatGPT -->
+
+                <!-- Display slider value -->
                 <script>
                     let max_year_slider = document.getElementById("max-discovery-year");
                     let max_year_output = document.getElementById("max_year");
@@ -107,13 +108,14 @@
                     });
                 </script>
             </div>
+
             <!-- Minimum Mass -->
             <div class="card">
                 <h1 class="card-header">Minimum Mass</h1>
                 <label for="min-mass"><span id="min_mass"></span><span>&nbsp;Earth Masses</span></label>
                 <input type="range" id="min-mass" min="0" max="26000" value="0">
         
-                <!-- Script made with help from ChatGPT -->
+                <!-- Display slider value -->
                 <script>
                     let min_mass_slider = document.getElementById("min-mass");
                     let min_mass_output = document.getElementById("min_mass");
@@ -129,7 +131,8 @@
                 <h1 class="card-header">Maximum Mass</h1>
                 <label for="max-mass"><span id="max_mass"></span><span>&nbsp;Earth Masses</span></label>
                 <input type="range" id="max-mass" min="0" max="26000" value="26000">
-                <!-- Script made with help from ChatGPT -->
+
+                <!-- Display slider value -->
                 <script>
                     let max_mass_slider = document.getElementById("max-mass");
                     let max_mass_output = document.getElementById("max_mass");
