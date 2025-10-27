@@ -1,0 +1,186 @@
+@import "color-style.css";
+
+/* This is needed for fade in animation to play upon loading page */
+@keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 100;
+        }
+}
+
+:root {
+    /* Generic Variables */
+    --default-border-radius: 50px;
+    --default-transition-duration: 0.5s;
+    --default-transform-increase: 1.03;
+    --default-transform-decrease: 0.93;
+    --heading-margin-bottom: 75px;
+    --page-horizontal-margin: 75px;
+
+    /* Navigation bar variables */
+    --nav-vertical-margin: 20px;
+    --nav-min-gap: 20px;
+    --nav-max-gap: 100px;
+    --nav-preferred-gap: 5vw;
+    --nav-vertical-padding: 30px;
+    --nav-horizontal-padding: 30px;
+
+    --nav-link-vertical-padding: 15px;
+    --nav-link-horizontal-padding: 25px;
+
+    --nav-z-index: 1000;
+
+    /* About Section variables */
+    --about-height: 650px;
+    --image-margin: 30px;
+
+    /* Card Section variables */
+    --card-width: 300px;
+    --card-height: 350px;
+    --card-vertical-gap: 30px;
+}
+
+
+/* Universal Styles */ 
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--clr-light-a0);
+}
+
+/* Body Styling */
+body {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    min-width: min-content;
+
+    background-color: var(--clr-surface-tonal-a0);
+    animation: fadeIn 1s ease-in both;
+}
+
+/* Button Styling */
+.button:active {
+    transform: scale(0.97);
+    transition: var(--card-transition-duration);
+}
+
+/* Navigation Bar Styling */
+nav {
+    margin-top: var(--nav-vertical-margin);
+    margin-left: var(--page-horizontal-margin);
+    margin-right: var(--page-horizontal-margin);
+    position: sticky;
+    top:  var(--nav-vertical-margin);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: clamp(var(--nav-min-gap), var(--nav-preferred-gap), var(--nav-max-gap));
+
+    padding: var(--nav-vertical-padding) var(--nav-horizontal-padding);
+
+    background-color: var(--clr-surface-tonal-a10);
+
+    border: 4px solid var(--clr-surface-tonal-a20);
+    border-radius: var(--default-border-radius);
+
+    z-index: var(--nav-z-index);
+}
+
+nav > .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+#nav-img {
+    height: 75px;
+    width: 75px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: var(--nav-link-vertical-padding) var(--nav-link-horizontal-padding);
+    border-radius: var(--default-border-radius);
+    border: 1px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-color: var(--clr-primary-a0);
+    transition: 0.5s ease-in-out;
+    border: 1px solid var(--clr-surface-tonal-a10);
+}
+
+nav a:active {
+    transform: scale(var(--default-transform-decrease));
+    transition: var(--default-transition-duration);
+}
+
+/* Highlights the page the user is currently on in the nav bar */
+.current-page-link {
+    color: var(--clr-primary-a0);
+    background-color:  var(--clr-surface-tonal-a20);
+}
+
+.current-page-link:hover {
+    color: var(--clr-primary-a0);
+    background-color:  var(--clr-surface-tonal-a20);
+    border: 1px solid var(--clr-surface-tonal-a20);
+}
+
+/* Generic Section Styling */
+section {
+    background-color: var(--clr-surface-tonal-a0);
+    margin: var(--heading-margin-bottom) var(--page-horizontal-margin);
+}
+
+section > h1 {
+    text-align: center;
+    margin-bottom: var(--heading-margin-bottom);
+}
+
+section p {
+    font-size: 35px;
+}
+
+/* Card Styling */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-width), auto));
+    justify-content: space-around;
+    width: 100%;
+    gap: var(--card-vertical-gap) 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: var(--card-width);
+    height: var(--card-height);
+    background-color: var(--clr-surface-tonal-a10);
+    border-radius: var(--default-border-radius);
+    border: 4px solid var(--clr-surface-tonal-a20);
+    transition: var(--card-transition-duration) ease-in-out;
+}
+
+.card:hover {
+    background-color: var(--clr-surface-tonal-a20);
+    transform: scale(var(--default-transform-increase));
+    transition: var(--default-transition-duration) ease-in-out;
+}
+
+/* Footer Section Styling */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-surface-tonal-a20);
+}
