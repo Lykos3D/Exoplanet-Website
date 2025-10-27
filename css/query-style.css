@@ -24,6 +24,10 @@ form {
     gap: var(--button-card-gap);
 }
 
+.card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(var(--form-card-width), auto));
+}
+
 .card-header {
     font-size: 30px;
     text-align: center;
@@ -36,6 +40,13 @@ form {
     justify-content: space-evenly;
     width: var(--form-card-width);
     height: var(--form-card-height);
+}
+
+/* Change cursor when hovering over form elements */
+input[type="checkbox"],
+input[type="range"],
+input[type="submit"] {
+    cursor: pointer;
 }
 
 /* Submit Button Styling */

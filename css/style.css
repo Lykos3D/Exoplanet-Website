@@ -39,6 +39,7 @@
     /* Card Section variables */
     --card-width: 300px;
     --card-height: 350px;
+    --card-vertical-gap: 30px;
 }
 
 
@@ -154,7 +155,7 @@ section p {
     grid-template-columns: repeat(auto-fit, minmax(var(--card-width), auto));
     justify-content: space-around;
     width: 100%;
-    gap: 50px;
+    gap: var(--card-vertical-gap) 0;
 }
 
 .card {
