@@ -1,0 +1,33 @@
+:root {
+    /* Form Card styles */
+    --form-card-width: 400px;
+    --form-card-height: 500px;
+}
+
+/* Make the range sliders wider */
+input[type="range"] {
+    width: 275px;
+}
+
+/* Form Card styling */
+form.card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(var(--form-card-width), 1fr));
+}
+
+.card-header {
+    font-size: 30px;
+    text-align: center;
+}
+
+form > .card {
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 30px;
+    justify-content: space-evenly;
+    width: var(--form-card-width);
+    height: var(--form-card-height);
+}
+
+form > .card > h1 {
+    text-align: center;
+}

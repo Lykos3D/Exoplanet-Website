@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exoplanet Website</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/query-style.css" />
+    <link rel="icon" href="images/planet_tab_image.png" type="image/png">
+    <!-- This is needed for the Rubik font to work, from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- This is needed for icons, hosted by Font Awesome -->
+    <script src="https://kit.fontawesome.com/68f1cdffaa.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav>
+        <div class="logo"><img id="nav-img" src="./images/planet_sidebar_image.png" alt="Planet image"><h3>Exoplanet<br>Search!</h3></div>
+        <a href="./index.html"><i class="fa-solid fa-circle-info button"></i></i>&nbsp;About</a>
+        <a href="./insights.html"><i class="fa-solid fa-magnifying-glass button"></i></i>&nbsp;Insights</a>
+        <a class="current-page-link" href="./query-planets.html"><i class="fa-solid fa-clipboard-list button current-page-link"></i>&nbsp;Query Planets</a>
+        <a href="#"><i class="fa-solid fa-chart-simple button"></i>&nbsp;Statistics</a>
+  </nav>
+
+  <!-- Query Planets Section -->
+   <section id="query-planets">
+    <h1>Query Planets</h1>
+    <p>Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text </p>
+   </section>
+
+  <!-- Select Planets Section -->
+ <section id="select-planets">
+    <h1>Select Planets</h1>
+    <form class="card-grid" action="statistics.php" method="GET">
+        <!-- Distance from Earth-->
+
+        <!-- Minimum distance -->
+         <div class="card">
+            <h1 class="card-header">Minimum Distance from Earth</h1>
+            <label for="min-distance-from-earth"><span id="min_distance"></span><span>&nbsp;Parsecs</span></label>
+            <input type="range" id="min-distance-from-earth" min="0" max="10000" value="0">
+         
+            <!-- Script made with help from ChatGPT -->
+            <script>
+                let min_dist_slider = document.getElementById("min-distance-from-earth");
+                let min_dist_output = document.getElementById("min_distance");
+
+                min_distance.textContent = min_dist_slider.value;
+
+                min_dist_slider.addEventListener('input', function() {
+                    min_dist_output.textContent = this.value;
+                });
+            </script>
+
+            <!-- Maximum Distance -->
+                <h1 class="card-header">Maximum Distance from Earth</h1>
+                <label for="max-distance-from-earth"><span id="max_distance"></span><span>&nbsp;Parsecs</span></label>
+                <input type="range" id="max-distance-from-earth" min="0" max="10000" value="10000">
+         
+            <!-- Script made with help from ChatGPT -->
+            <script>
+                let max_dist_slider = document.getElementById("max-distance-from-earth");
+                let max_dist_output = document.getElementById("max_distance");
+
+                max_distance.textContent = max_dist_slider.value;
+
+                max_dist_slider.addEventListener('input', function() {
+                    max_dist_output.textContent = this.value;
+                });
+            </script>
+        </div>
+
+        <!-- Year of Discovery -->
+
+        <!-- Minimum Year -->
+         <div class="card">
+            <h1 class="card-header">Earliest Discovery Year</h1>
+            <label for="min-discovery-year"><span>Year:&nbsp;</span><span id="min_year"></span></label>
+            <input type="range" id="min-discovery-year" min="1992" max="2025" value="1992">
+         
+            <!-- Script made with help from ChatGPT -->
+            <script>
+                let min_year_slider = document.getElementById("min-discovery-year");
+                let min_year_output = document.getElementById("min_year");
+
+                min_year.textContent = min_year_slider.value;
+
+                min_year_slider.addEventListener('input', function() {
+                    min_year_output.textContent = this.value;
+                });
+            </script>
+
+            <!-- Maximum Year -->
+            <h1 class="card-header">Latest Discovery Year</h1>
+            <label for="max-discovery-year"><span>Year:&nbsp;</span><span id="max_year"></span></label>
+            <input type="range" id="max-discovery-year" min="1992" max="2025" value="2025">
+            <!-- Script made with help from ChatGPT -->
+            <script>
+                let max_year_slider = document.getElementById("max-discovery-year");
+                let max_year_output = document.getElementById("max_year");
+
+                max_year.textContent = max_year_slider.value;
+
+                max_year_slider.addEventListener('input', function() {
+                    max_year_output.textContent = this.value;
+                });
+            </script>
+        </div>
+        <!-- Minimum Mass -->
+         <div class="card">
+            <h1 class="card-header">Minimum Mass</h1>
+            <label for="min-mass"><span id="min_mass"></span><span>&nbsp;Earth Masses</span></label>
+            <input type="range" id="min-mass" min="0" max="26000" value="0">
+    
+            <!-- Script made with help from ChatGPT -->
+            <script>
+                let min_mass_slider = document.getElementById("min-mass");
+                let min_mass_output = document.getElementById("min_mass");
+
+                min_mass.textContent = min_mass_slider.value;
+
+                min_mass_slider.addEventListener('input', function() {
+                    min_mass_output.textContent = this.value;
+                });
+            </script>
+
+            <!-- Maximum Mass -->
+            <h1 class="card-header">Maximum Mass</h1>
+            <label for="max-mass"><span id="max_mass"></span><span>&nbsp;Earth Masses</span></label>
+            <input type="range" id="max-mass" min="0" max="26000" value="26000">
+            <!-- Script made with help from ChatGPT -->
+            <script>
+                let max_mass_slider = document.getElementById("max-mass");
+                let max_mass_output = document.getElementById("max_mass");
+
+                max_mass.textContent = max_mass_slider.value;
+
+                max_mass_slider.addEventListener('input', function() {
+                    max_mass_output.textContent = this.value;
+                });
+            </script>
+        </div>
+
+        <!-- Discovery Method -->
+         <div class="card">
+            <h1 class="card-header">Discovery Method</h1>
+            <div class="checkbox-container">
+                <div>
+                    <input type="checkbox" id="radial-velocity" name = "discovery_method[]" value="Radial Velocity">
+                    <label for="radial-velocity">&nbsp;Radial Velocity</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="imaging" name = "discovery_method[]" value="Imaging">
+                    <label for="imaging">&nbsp;Imaging</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="eclipse-timing-variations" name = "discovery_method[]" value="Eclipse Timing Variations">
+                    <label for="eclipse-timing-variations">&nbsp;Eclipse Timing Variations</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="transit" name = "discovery_method[]" value="Transit">
+                    <label for="transit">&nbsp;Transit</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="microlensing" name = "discovery_method[]" value="Microlensing">
+                    <label for="microlensing">&nbsp;Microlensing</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="astrometry" name = "discovery_method[]" value="Astrometry">
+                    <label for="astrometry">&nbsp;Astrometry</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- May need to add other checkboxes here if there are other discover methods -->
+         <!-- SELECT DISTINCT disc_method FROM ps; -->
+    </form>
+ </section>
+
+ <!-- Footer -->
+  <footer>
+    <p>Include acknowledgements of used assets here</p>
+  </footer>
+</body>
+</html>
