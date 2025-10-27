@@ -151,8 +151,10 @@ section p {
 /* Card Styling */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-width), auto));
+    justify-content: space-around;
+    width: 100%;
+    gap: 50px;
 }
 
 .card {

@@ -1,7 +1,13 @@
+@import "./color-style.css";
+@import "./style.css";
+
 :root {
     /* Form Card styles */
     --form-card-width: 400px;
     --form-card-height: 500px;
+    --button-card-gap: 50px;
+    --submit-button-width: 100px;
+    --submit-button-height: 50px;
 }
 
 /* Make the range sliders wider */
@@ -10,8 +16,12 @@ input[type="range"] {
 }
 
 /* Form Card styling */
-form.card-grid {
-    grid-template-columns: repeat(auto-fit, minmax(var(--form-card-width), 1fr));
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--button-card-gap);
 }
 
 .card-header {
@@ -19,7 +29,7 @@ form.card-grid {
     text-align: center;
 }
 
-form > .card {
+.card-grid > .card {
     padding-left: 25px;
     padding-right: 25px;
     font-size: 30px;
@@ -28,6 +38,25 @@ form > .card {
     height: var(--form-card-height);
 }
 
-form > .card > h1 {
-    text-align: center;
+/* Submit Button Styling */
+input[type="submit"] {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+
+    width: var(--submit-button-width);
+    height: var(--submit-button-height);
+
+    text-decoration: none;
+    
+    border-radius: var(--default-border-radius);
+    border: 1px solid transparent;
+    transition: 0.3s ease-in-out;
+
+    background-color: var(--clr-surface-tonal-a10);
+}
+
+input[type="submit"]:hover {
+    background-color: var(--clr-primary-a0);
+    transition: 0.5s ease-in-out;
+    border: 1px solid var(--clr-surface-tonal-a10);
 }
