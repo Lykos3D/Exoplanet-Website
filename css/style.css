@@ -24,7 +24,7 @@
     --nav-min-gap: 20px;
     --nav-max-gap: 100px;
     --nav-preferred-gap: 5vw;
-    --nav-vertical-padding: 30px;
+    --nav-vertical-padding: 20px;
     --nav-horizontal-padding: 30px;
 
     --nav-link-vertical-padding: 15px;
@@ -58,7 +58,6 @@ body {
     min-width: min-content;
 
     background-color: var(--clr-surface-tonal-a0);
-    animation: fadeIn 1s ease-in both;
 }
 
 /* Button Styling */
@@ -135,6 +134,11 @@ nav a:active {
 }
 
 /* Generic Section Styling */
+section,
+footer {
+    animation: fadeIn 1s ease-in both;
+}
+
 section {
     background-color: var(--clr-surface-tonal-a0);
     margin: var(--heading-margin-bottom) var(--page-horizontal-margin);
