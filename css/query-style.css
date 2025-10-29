@@ -34,12 +34,19 @@ form {
 }
 
 .card-grid > .card {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-top: 0;
     font-size: 30px;
     justify-content: space-evenly;
     width: var(--form-card-width);
     height: var(--form-card-height);
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
 }
 
 /* Change cursor when hovering over form elements */
