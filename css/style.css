@@ -37,9 +37,11 @@
     --image-margin: 30px;
 
     /* Card Section variables */
-    --card-width: 300px;
-    --card-height: 350px;
+    --card-width: 400px;
+    --card-height: 500px;
     --card-vertical-gap: 30px;
+    --card-padding-top: 75px;
+    --card-horizontal-padding: 25px;
 }
 
 
@@ -165,14 +167,16 @@ section p {
 .card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    text-align: center;
     width: var(--card-width);
     height: var(--card-height);
     background-color: var(--clr-surface-tonal-a10);
     border-radius: var(--default-border-radius);
     border: 4px solid var(--clr-surface-tonal-a20);
     transition: var(--card-transition-duration) ease-in-out;
+    padding: var(--card-padding-top) var(--card-horizontal-padding) 0 var(--card-horizontal-padding);
 }
 
 .card:hover {

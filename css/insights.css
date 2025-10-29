@@ -1,0 +1,10 @@
+@import "color-style.css";
+@import "style.css";
+
+:root {
+    --insight-section-height: 1000px;
+}
+
+section#insights {
+    height: var(--insight-section-height);
+}

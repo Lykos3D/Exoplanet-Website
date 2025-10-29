@@ -30,3 +30,7 @@ section#about {
 section#features {
     height: var(--features-height)
 }
+
+.card > h1 {
+    margin-bottom: 25px;
+}
