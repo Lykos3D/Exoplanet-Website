@@ -13,43 +13,124 @@
     <script src="https://kit.fontawesome.com/68f1cdffaa.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Navigation bar -->
-    <nav>
-        <div class="logo"><img id="nav-img" src="./images/planet_sidebar_image.png" alt="Planet image"><h3>Exoplanet<br>Search!</h3></div>
-        <a class="current-page-link" href="./index.html"><i class="fa-solid fa-circle-info current-page-link button"></i></i>&nbsp;About</a>
-        <a href="./insights.html"><i class="fa-solid fa-magnifying-glass button"></i></i>&nbsp;Insights</a>
-        <a href="./query-planets.html"><i class="fa-solid fa-clipboard-list button"></i>&nbsp;Query Planets</a>
-        <a href="./statistics.php"><i class="fa-solid fa-chart-simple button"></i>&nbsp;Statistics</a>
-    </nav>
+<!-- Navigation bar -->
+<nav>
+    <div class="logo"><img id="nav-img" src="./images/planet_sidebar_image.png" alt="Planet image"><h3>Exoplanet<br>Search!</h3></div>
+    <a class="current-page-link" href="./index.html"><i class="fa-solid fa-circle-info current-page-link button"></i>&nbsp;About</a>
+    <a href="./insights.html"><i class="fa-solid fa-magnifying-glass button"></i>&nbsp;Insights</a>
+    <a href="query-planets.php"><i class="fa-solid fa-clipboard-list button"></i>&nbsp;Query Planets</a>
+    <a href="./statistics.php"><i class="fa-solid fa-chart-simple button"></i>&nbsp;Statistics</a>
+</nav>
 
-    <!-- About Section -->
-    <section id="about">
-        <h1>About</h1>
-        <div class="image">Placeholder Image</div>
-        <p>Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text </p>
-    </section>
-
-    <section id="features">
-        <h1>Key Features</h1>
-        <div class="card-grid">
-            <div class="card">
-                <h1>Data Analysis</h1>
-                <p>An investigation of Exoplanet characteristics which may influence chances of discovery.</p>
-            </div>
-            <div class="card">
-                <h1>Query Planets</h1>
-                <p>Select a subset of planets from the Caltech Exoplanet Archive & generate personalized statisitcs.</p>
-            </div>
-            <div class="card">
-                <h1>Planet Map</h1>
-                <p>Generate a planet map from selected planets showing their position relative to Earth.</p>
-            </div>
+<!-- About Section -->
+<section class="about" style="height: min-content;">
+    <h1>About</h1>
+    <figure>
+        <img class="image" alt="Example Planet Map Image" src="figures/map_example.png">
+        <figcaption>A generated exoplanet map using three.js</figcaption>
+    </figure>
+    <p>Welcome to Exoplanet Search! This is a website which investigates how certain Exoplanet discovery methods are correlated with characteristics of Exoplanets (e.g. planet orbital radius around its host star).</p>
+    <br>
+    <p>In particular, this website focuses on four different Exoplanet discovery classes:</p>
+    <ul>
+        <li style="font-size: 35px;">Transit</li>
+        <li style="font-size: 35px;">Radial Velocity</li>
+        <li style="font-size: 35px;">Microlensing</li>
+        <li style="font-size: 35px;">Imaging</li>
+    </ul>
+    <br><br><br><br><br><br>
+    <p>This site not only employs machine learning to predict an Exoplanet's discovery method using select characteristics, but it also allows the user to query planets and generate a planet map. This map will then show the user all of their queried Exoplanets and their position relative to Earth!</p>
+    <!-- Yes, I know this is a messy way to do this -->
+</section>
+<section id="features">
+    <h1>Key Features</h1>
+    <div class="card-grid">
+        <div class="card">
+            <h1>Discovery Methods</h1>
+            <p>An overview of the four most common Exoplanet discovery methods.</p>
         </div>
-    </section>
+        <div class="card">
+            <h1>Data Analysis</h1>
+            <p>Development of a Random Forest Classifier which uses an Exoplanet's characteristics to determine its likely discovery method.</p>
+        </div>
+        <div class="card">
+            <h1>Query Planets</h1>
+            <p>Select a subset of planets from the Caltech Exoplanet Archive & generate personalized statistics.</p>
+        </div>
+        <div class="card">
+            <h1>Planet Map</h1>
+            <p>Generate a planet map from queried planets, showing their position relative to Earth.</p>
+        </div>
+    </div>
+</section>
+<section class="about">
+    <br><br>
+    <h1>Transit</h1>
+    <figure>
+        <img class="image" alt="Transit Figure" src="figures/transit.jpg">
+        <figcaption>An exoplanet passing in front of its host star.</figcaption>
+    </figure>
+    <p>Discovering an exoplanet using the <b>Transit</b> method involves measuring dips in light of a given star after one of its planets passes through it.</p><br><p>This is ideal for:</p>
+    <ul>
+        <li style="font-size: 35px;">Planets whose orbits pass between Earth and its host star</li>
+        <li style="font-size: 35px;">Planets with a small orbital radius</li>
+        <li style="font-size: 35px;">Planets with high mass (e.g. gas giants)</li>
+    </ul>
+    <!-- Yes, I know this is a messy way to do this -->
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <h1>Radial Velocity</h1>
+    <figure>
+        <img class="image" alt="Radial Velocity Figure" src="figures/radial_velocity.png">
+        <figcaption>An exoplanet "tugging" on its host star,<br> causing redshifts and blueshifts overtime.</figcaption>
+    </figure>
+    <p>With the <b>Radial Velocity</b> method, the gravitational pull of a given star's exoplanet causes the host star to "wobble." When the star is shifted towards Earth, a blueshift occurs; conversely, when the star is shifted away from Earth,a redshift occurs. It is this change of observed light that makes the discovery possible.</p><br><p>This is ideal for:</p>
+    <ul>
+        <li style="font-size: 35px;">Star systems that are closer to Earth (necessary observable shift of visible light)</li>
+        <li style="font-size: 35px;">Planets that produce a significant gravitational pull on their host star
+            <ul>
+                <li style="font-size: 35px;">Closer planets with lower mass</li>
+                <li style="font-size: 35px;">Larger planets with higher mass</li>
+            </ul>
+        </li>
+    </ul>
+    <!-- Yes, I know this is a messy way to do this -->
+    <br><br><br><br><br><br>
+    <h1>Microlensing</h1>
+    <figure>
+        <img class="image" alt="Microlensing Figure" src="figures/microlensing.png">
+        <figcaption>Gravity of an exoplanet causing a spike<br>in observed brightness for distant star.</figcaption>
+    </figure>
+    <p>Using <b>Microlensing</b> involves looking at the effects that the gravitational pull that an exoplanet and its host star has on another star.<br><br>As the planet orbits its host star, their gravity can temporarily amplify the brightness of another distant star, giving the effect of a lens or magnifying glass.</p><br><p>This is ideal for:</p>
+    <ul>
+        <li style="font-size: 35px;">Star systems that are distant from Earth</li>
+        <li style="font-size: 35px;">Planets with a wider orbital radius</li>
+    </ul>
+    <!-- Yes, I know this is a messy way to do this -->
+    <br><br><br><br><br><br><br>
+    <h1>Imaging</h1>
+    <figure>
+        <img class="image" alt="Imaging Figure" src="figures/imaging.png">
+        <figcaption>A direct image of an exoplanet.</figcaption>
+    </figure>
+    <p>The <b>Imaging</b> method involves taking an actual picture of the exoplanet.</p><br><p>This is best suited for:</p>
+    <ul>
+        <li style="font-size: 35px;">Star systems that are closer to Earth</li>
+        <li style="font-size: 35px;">Planets with a large mass</li>
+        <li style="font-size: 35px;">Planets with a wider orbital radius</li>
+    </ul>
+    <!-- Yes, I know this is a messy way to do this -->
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <p>If you would like to read more about discovery methods, you can see some more detailed explanations <a href="https://www.schoolsobservatory.org/learn/space/exoplanets/detection-methods">here</a>.</p>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>Include acknowledgements of used assets here</p>
-    </footer>
+<!-- Footer -->
+<footer>
+    <p>Tab planet image attribution: <a href="https://www.flaticon.com/free-icons/planet">Planet icons created by monkik - Flaticon</a>;&nbsp</p>
+    <p>Sidebar planet image attribution: <a href="https://www.flaticon.com/free-icons/planet">Planet icons created by Nsit - Flaticon</a></p>
+    <p>Transit Figure: <a href="https://svs.gsfc.nasa.gov/13022">From NASA</a></p>
+    <p>Radial Velocity Figure: <a href="https://www.schoolsobservatory.org/learn/space/exoplanets/detection-methods">From Schools Observatory</a></p>
+    <p>Microlensing Figure: <a href="https://www.schoolsobservatory.org/learn/space/exoplanets/detection-methods">From Schools Observatory</a></p>
+    <p>Imaging Figure: <a href="https://www.schoolsobservatory.org/learn/space/exoplanets/detection-methods">From Schools Observatory</a></p>
+</footer>
 </body>
 </html>

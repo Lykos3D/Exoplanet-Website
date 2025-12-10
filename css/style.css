@@ -2,12 +2,12 @@
 
 /* This is needed for fade in animation to play upon loading page */
 @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 100;
-        }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
 }
 
 :root {
@@ -42,10 +42,11 @@
     --card-vertical-gap: 30px;
     --card-padding-top: 75px;
     --card-horizontal-padding: 25px;
+    --card-transition-duration: 0.5;
 }
 
 
-/* Universal Styles */ 
+/* Universal Styles */
 * {
     margin: 0;
     box-sizing: border-box;
@@ -155,6 +156,10 @@ section p {
     font-size: 35px;
 }
 
+li {
+    font-size: 35px;
+}
+
 /* Card Styling */
 .card-grid {
     display: grid;
@@ -188,7 +193,12 @@ section p {
 /* Footer Section Styling */
 footer {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: var(--clr-surface-tonal-a20);
+}
+
+.method-list {
+    font-size: 35px;
 }

@@ -2,9 +2,81 @@
 @import "style.css";
 
 :root {
-    --insight-section-height: 1000px;
+    --insight-section-height: min-content;
 }
 
 section#insights {
     height: var(--insight-section-height);
+}
+
+.figure-right {
+    float: right;
+    margin: 0 0 2em 2em;
+    width: min-content;
+}
+
+.figure-left {
+    float: left;
+    margin: 0 2em 2em 0;
+    width: min-content;
+}
+
+.image {
+    background-color: var(--clr-surface-tonal-a10);
+    border: 4px solid var(--clr-surface-tonal-a20);
+    border-radius: var(--default-border-radius);
+}
+
+.smote-info ul {
+    margin: 0.5em 0 0.5em 2em;
+    padding-left: 1em;
+    list-style-type: disc;
+}
+
+.smote-info li {
+    margin-bottom: 0.5em;
+}
+
+.test-figures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    padding: 0;
+}
+
+.test-figures figure {
+    text-align: center;
+}
+
+.stats-table {
+    margin: 30px auto;
+    border-collapse: collapse;
+    font-size: 28px;
+    background-color: var(--clr-surface-tonal-a10);
+    border: 4px solid var(--clr-surface-tonal-a20);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.stats-table th, .stats-table td {
+    padding: 15px 25px;
+    border-bottom: 2px solid var(--clr-surface-tonal-a20);
+}
+
+.stats-table th {
+    background-color: var(--clr-surface-tonal-a20);
+    font-weight: 700;
+}
+
+.stats-table tr:last-child td {
+    border-bottom: none;
+}
+
+.stats-table td, .stats-table th {
+    text-align: center;
 }

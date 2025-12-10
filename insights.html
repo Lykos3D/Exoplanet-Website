@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exoplanet Website</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index-style.css">
     <link rel="stylesheet" href="./css/insights.css">
     <link rel="icon" href="images/planet_tab_image.png" type="image/png">
+    <!-- This is needed to make the Python file (machine_learning.py) look nice -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism.min.css" />
     <!-- This is needed for the Rubik font to work, from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <!-- This is needed for icons, hosted by Font Awesome -->
@@ -18,19 +21,276 @@
         <div class="logo"><img id="nav-img" src="./images/planet_sidebar_image.png" alt="Planet image"><h3>Exoplanet<br>Search!</h3></div>
         <a href="./index.html"><i class="fa-solid fa-circle-info button"></i></i>&nbsp;About</a>
         <a class="current-page-link" href="./insights.html"><i class="fa-solid fa-magnifying-glass current-page-link button"></i></i>&nbsp;Insights</a>
-        <a href="./query-planets.html"><i class="fa-solid fa-clipboard-list button"></i>&nbsp;Query Planets</a>
+        <a href="query-planets.php"><i class="fa-solid fa-clipboard-list button"></i>&nbsp;Query Planets</a>
         <a href="./statistics.php"><i class="fa-solid fa-chart-simple button"></i>&nbsp;Statistics</a>
   </nav>
 
     <!-- Insights Section -->
   <section id="insights">
     <h1>Insights</h1>
-    <p>Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text </p>
+      <figure class="figure-right">
+          <img class="image" style="width: 800px; height: auto;" src="figures/preliminary-features-graph.png" alt="Preliminary Features Graph">
+          <figcaption>A preliminary features scatter plot, Orbital Radius versus Planet Distance from Earth.</figcaption>
+      </figure>
+      <p>The <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&config=PSCompPars">Caltech Exoplanet dataset</a> contains a variety of planet features for each planet. However, two features proved to distinguish planet discovery methods the most:</p>
+      <ul>
+          <li>Orbital Radius</li>
+          <li>Distance from Earth</li>
+      </ul>
+      <br>
+      <p>While additional features could also have been examined, this ultimately was not done due to the presence of many NULL values for other features.</p>
+      <br><br><br><br><br><br><br>
+      <p>Given this feature graph, a <b>Random Forest Classifier</b> was developed using the dataset to predict a given exoplanet's discovery method class.</p>
+      <br><br>
+      <figure class="figure-left">
+          <img class="image" style="width: 800px; height: auto;" src="figures/discovery_method_frequencies.png" alt="Preliminary Features Graph">
+          <figcaption>A bar graph showing the frequency of each discovery method.</figcaption>
+      </figure>
+
+      <p>However, since there exists a major class imbalance between discovery methods, this imbalance needed to be considered when building the classifier.</p>
+      <br>
+      <p>A <b>Synthetic Minority Over-Sampling Technique</b> or (<b>SMOTE</b>) was used to generate additional "synthetic" samples of underrepresented classes to help with the imbalance. This was ONLY used on the training data; test data remained un-altered.</p>
+      <br>
+      <p>The <b>Holdout Method</b> was used to train and test the model: 80% training data; 20% testing data.</p>
+      <br>
+      <p>Since there were so few examples of <b>Imaging</b>, the classifier only includes the <b>Transit</b>, <b>Radial Velocity</b>, and Microlensing discovery methods.</p>
+      <br><br><br><br><br><br>
+      <p>The Random Forest Classifier generated the following decision boundaries:</p>
+      <br><br><br>
+      <figure class="figure-right">
+          <img class="image" style="width: 800px; height: auto;" alt="Random Forest Decision Boundary Figure" src="figures/random_forest_decision_boundaries_training.png">
+          <figcaption>Decision Boundaries for the Random Forest Classifier with Training Data Overlapped</figcaption>
+      </figure>
+      <br>
+      <p><b>Feature Engineering (log)</b> was employed to reduce skewness and to make the data more presentable.</p>
+      <br>
+      <p>The scatter plot overlays the <b>training data</b> with the decision boundaries of the Random Forest Classifier.</p>
+      <br>
+      <p>Most overlap/confusion is found between the <b>Transit</b> and <b>Radial Velocity</b> discovery methods.</p>
+      <br>
+      <p>There is far less overlap between <b>Microlensing</b> and the other discovery methods.</p>
+      <br><br><br><br><br><br><br><br><br>
+      <p style="text-align: center">The Confusion Matrix and Random Classifier Boundaries with the testing data can be found below:</p>
+      <div class="test-figures">
+          <figure style="margin: 0;">
+              <img style="width: auto; height: 480px; padding: 0;" class="image" alt="Confusion Matrix" src="figures/confusion_matrix.png">
+              <figcaption>Confusion Matrix for Testing Data</figcaption>
+          </figure>
+          <figure style="margin: 0;">
+              <img style="width: 800px; height: auto; padding: 0;" class="image" alt="Random Forest Decision Boundary Figure" src="figures/random_forest_decision_boundaries_testing.png">
+              <figcaption>Decision Boundaries for the Random Forest Classifier with Testing Data Overlapped</figcaption>
+          </figure>
+      </div>
+      <table class="stats-table">
+          <tr>
+              <th>Class</th>
+              <th>Precision</th>
+              <th>Recall</th>
+              <th>F1-Score</th>
+              <th>Support</th>
+          </tr>
+
+          <tr>
+              <td>Microlensing</td>
+              <td>0.83</td>
+              <td>0.98</td>
+              <td>0.90</td>
+              <td>51</td>
+          </tr>
+
+          <tr>
+              <td>Radial Velocity</td>
+              <td>0.77</td>
+              <td>0.94</td>
+              <td>0.85</td>
+              <td>223</td>
+          </tr>
+
+          <tr>
+              <td>Transit</td>
+              <td>0.99</td>
+              <td>0.92</td>
+              <td>0.95</td>
+              <td>843</td>
+          </tr>
+      </table>
+
+      <p>The full code used to generate the Random Forest Classifier can be found below:</p>
+      <br>
+      <details>
+          <summary style="cursor: pointer;">Show/Hide Code</summary>
+          <pre><code class="language-python">
+                import pandas as pd
+                import numpy as np
+                import matplotlib.pyplot as plt
+                from sklearn.model_selection import train_test_split
+                from sklearn.ensemble import RandomForestClassifier
+                from sklearn.metrics import classification_report
+                from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+                from sklearn.metrics import balanced_accuracy_score
+                from imblearn.over_sampling import SMOTE
+
+                # This generates the graph detailing the frequency of each discovery method
+                method_names = ['Transit', 'Radial Velocity', 'Microlensing']
+                frequencies = [4594, 1275, 262]
+                colors = ['red', 'blue', 'green']
+
+                # This generates the bar graph
+                plt.bar(method_names, frequencies, color=colors)
+                plt.xlabel('Discovery Method')
+                plt.ylabel('Frequencies')
+                plt.title('Number of Exoplanets Discovered by Method')
+                plt.show()
+
+                # This gets the dataset, gets the relevant rows and columns, and drops columns with missing values
+                df = pd.read_csv('exoplanet_database.csv')
+                df = df[['sy_dist', 'pl_orbsmax', 'discoverymethod']]
+                df = df[df['discoverymethod'].isin(['Transit', 'Radial Velocity', 'Microlensing'])]
+                df = df.dropna()
+
+                # Select the feature and target columns
+                X = df.iloc[:, 0:2]
+                y = df.iloc[:, 2]
+
+                # Feature engineering: applying log + 1 to each feature
+                X = np.log1p(X)
+
+                # Split the training and test data
+                X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=64, test_size=0.2, stratify=y)
+
+                # SMOTE helps handle the extreme class imbalance I have with my data:
+                # Transit: 74.21% of all Exoplanets in the dataset used this discovery method
+                # Radial Velocity: 19.10% of all Exoplanets in the dataset used this discovery method
+                # Microlensing: 3.92% of all Exoplanets in the dataset used this discovery method
+
+                # It works by making "synthetic" examples of under-represented classes to prevent the model from just
+                # guessing the majority class no matter what (Transit)
+                smote = SMOTE(random_state=64)
+                X_train_resampled, y_train_resampled = smote.fit_resample(X_train, y_train)
+
+                rf = RandomForestClassifier(
+                    n_estimators=200,
+                    max_depth=8,
+                    min_samples_split=5,
+                    min_samples_leaf=3,
+                    max_features='sqrt',
+                    random_state=64
+                )
+                rf.fit(X_train_resampled, y_train_resampled)
+
+                y_pred = rf.predict(X_test)
+                y_train_pred = rf.predict(X_train_resampled)
+
+                # This is the statistics for the Random Forest Classifier
+                print(classification_report(y_test, y_pred))
+                cm = confusion_matrix(y_test, y_pred)
+                acc = balanced_accuracy_score(y_test, y_pred)
+                print("Test data accuracy:" + str(acc))
+                print("Training data accuracy:" + str(balanced_accuracy_score(y_train_resampled, y_train_pred)))
+                print("\nConfusion Matrix: Microlensing, Radial Velocity, Transit")
+                print(cm)
+
+                # This generates the plot for the Confusion Matrix
+                display = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['Microlensing', 'Radial Velocity', 'Transit'])
+                display.plot(cmap=plt.cm.Blues)
+                plt.title("Discovery Method Confusion Matrix")
+                plt.show()
+
+                # This computes the ranges for the plot overlapping the Decision Boundaries with the Training Data
+                x_min, x_max = X['sy_dist'].min() - 0.1, X['sy_dist'].max() + 0.1
+                y_min, y_max = X['pl_orbsmax'].min() - 0.1, X['pl_orbsmax'].max() + 0.1
+
+                # This creates a grid of points to use on the Random Forest Classifier
+                xx, yy = np.meshgrid(
+                    np.linspace(x_min, x_max, 500),
+                    np.linspace(y_min, y_max, 500)
+                )
+
+                # This assigns each point on the grid to a class using the classifier
+                mesh_points = pd.DataFrame(np.c_[xx.ravel(), yy.ravel()], columns=['sy_dist', 'pl_orbsmax'])
+                Z = rf.predict(mesh_points)
+
+                # Map class labels to integers for plotting
+                class_mapping = {'Transit': 0, 'Radial Velocity': 1, 'Microlensing': 2}
+                Z_num = np.array([class_mapping[label] for label in Z])
+                Z_num = Z_num.reshape(xx.shape)
+
+                # This draws the actual plot itself
+                plt.figure(figsize=(10, 6))
+                plt.contourf(xx, yy, Z_num, alpha=0.3, cmap=plt.cm.Set1)
+
+                # This assigns a shape and color to each of the points depending on their class
+                markers = {'Transit': 'o', 'Radial Velocity': 's', 'Microlensing': '^'}
+                colors = {'Transit': 'red', 'Radial Velocity': 'green', 'Microlensing': 'blue'}
+
+                # For each class...
+                for cls in y.unique():
+                    plt.scatter(
+                        # Plot each element of the training data on the plot
+                        X_train_resampled[y_train_resampled == cls]['sy_dist'],
+                        X_train_resampled[y_train_resampled == cls]['pl_orbsmax'],
+                        c=colors[cls], marker=markers[cls], label=cls, edgecolor='k', alpha=0.7
+                    )
+
+                # This labels the plot axes and adds a title for it
+                plt.xlabel('log(Planet Distance (Parsecs))')
+                plt.ylabel('log(Orbital Radius (AUs))')
+                plt.title('Random Forest Decision Boundaries (Training Data Overlapped)')
+                plt.legend()
+                plt.show()
+
+                # This computes the ranges for the plot overlapping the Decision Boundaries with the Testing Data
+                x_min, x_max = X['sy_dist'].min() - 0.1, X['sy_dist'].max() + 0.1
+                y_min, y_max = X['pl_orbsmax'].min() - 0.1, X['pl_orbsmax'].max() + 0.1
+
+                # This creates a grid of points to use on the Random Forest Classifier
+                xx, yy = np.meshgrid(
+                    np.linspace(x_min, x_max, 500),
+                    np.linspace(y_min, y_max, 500)
+                )
+
+                # This assigns each point on the grid to a class using the classifier
+                mesh_points = pd.DataFrame(np.c_[xx.ravel(), yy.ravel()], columns=['sy_dist', 'pl_orbsmax'])
+                Z = rf.predict(mesh_points)
+
+                # Map class labels to integers for plotting
+                class_mapping = {'Transit': 0, 'Radial Velocity': 1, 'Microlensing': 2}
+                Z_num = np.array([class_mapping[label] for label in Z])
+                Z_num = Z_num.reshape(xx.shape)
+
+                # This draws the actual plot itself
+                plt.figure(figsize=(10, 6))
+                plt.contourf(xx, yy, Z_num, alpha=0.3, cmap=plt.cm.Set1)
+
+                # This assigns a shape and color to each of the points depending on their class
+                markers = {'Transit': 'o', 'Radial Velocity': 's', 'Microlensing': '^'}
+                colors = {'Transit': 'red', 'Radial Velocity': 'green', 'Microlensing': 'blue'}
+
+                # For each class...
+                for cls in y.unique():
+                    plt.scatter(
+                        # Plot each element of the training data on the plot
+                        X_test[y_test == cls]['sy_dist'],
+                        X_test[y_test == cls]['pl_orbsmax'],
+                        c=colors[cls], marker=markers[cls], label=cls, edgecolor='k', alpha=0.7
+                    )
+
+                # This labels the plot axes and adds a title for it
+                plt.xlabel('log(Planet Distance (Parsecs))')
+                plt.ylabel('log(Orbital Radius (AUs))')
+                plt.title('Random Forest Decision Boundaries (Testing Data Overlapped)')
+                plt.legend()
+                plt.show()
+                <!-- This is Prism.js, which is needed to make the code look nice -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-python.min.js"></script>
+          </code></pre>
+      </details>
  </section>
 
- <!-- Footer -->
-  <footer>
-    <p>Include acknowledgements of used assets here</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <p>Tab planet image attribution: <a href="https://www.flaticon.com/free-icons/planet">Planet icons created by monkik - Flaticon</a>;&nbsp</p><p>Sidebar planet image attribution: <a href="https://www.flaticon.com/free-icons/planet">Planet icons created by Nsit - Flaticon</a></p>
+    </footer>
 </body>
 </html>
